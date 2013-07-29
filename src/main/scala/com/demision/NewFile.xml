@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+	<property>
+		<name>http.agent.name</name>
+		<value>Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.1 (KHTML, like
+			Gecko) Chrome/21.0.1180.89 Safari
+		</value>
+	</property>
+
+	<property>
+		<name>plugin.folders</name>
+		<value>./src/plugin</value>
+		<description>Directories where nutch plugins are located. Each
+			element
+			may be a relative or absolute path. If absolute, it is used
+			as is. If
+			relative, it is searched for on the classpath.
+		</description>
+	</property>
+
+	<property>
+		<name>plugin.includes</name>
+		<value>protocol-httpclient|urlfilter-regex|parse-(hound|tika)|index-(basic|anchor)|scoring-opic|urlnormalizer-(pass|regex|basic)
+		</value>
+		<description>Regular expression naming plugin directory names to
+			include. Any plugin not matching this expression is excluded.
+			In any
+			case you need at least include the nutch-extensionpoints plugin.
+			By
+			default Nutch includes crawling just HTML and plain text via HTTP,
+			and basic indexing and search plugins. In order to use HTTPS please
+			enable
+			protocol-httpclient, but be aware of possible intermittent
+			problems with the
+			underlying commons-httpclient library.
+		</description>
+	</property>
+
+	<property>
+		<name>http.agent.version</name>
+		<value>537.1</value>
+		<description>A version string to advertise in the User-Agent
+			header.
+		</description>
+	</property>
+
+
+
+	<!-- nutch 最大下载大小 -->
+	<property>
+		<name>http.content.limit</name>
+		<value>131070</value>
+		<description>The length limit for downloaded content using the http://
+			protocol, in bytes. If this value is nonnegative (>=0), content
+			longer
+			than it will be truncated; otherwise, no truncation at all. Do
+			not
+			confuse this setting with the file.content.limit setting.
+		</description>
+	</property>
+
+	<!-- database config -->
+	<property>
+		<name>db.url</name>
+		<value><![CDATA[jdbc:mysql://222.200.185.29:3306/db_yeezhao_hound?characterEncoding=utf-8]]></value>
+		<description>数据库链接字符串</description>
+	</property>
+	<property>
+		<name>db.user</name>
+		<value>hound</value>
+		<description>数据库链接用户名</description>
+	</property>
+	<property>
+		<name>db.password</name>
+		<value>sumweibo</value>
+		<description>数据库链接密码</description>
+	</property>
+	
+	<property>
+		<name>linked.user</name>
+		<value>linkedin@summba.com</value>
+		<description>数据库链接密码</description>
+	</property>
+	
+	<property>
+		<name>linked.password</name>
+		<value>summba</value>
+		<description>数据库链接密码</description>
+	</property>
+
+	<!-- 是否只抓中国人 -->
+	<property>
+		<name>ext.fetch.chinese</name>
+		<value>false</value>
+		<description>是否只抓中国人
+		</description>
+	</property>
+
+	<!-- 模板文件地址,必须指定 -->
+	<property>
+		<name>ext.template.linkedin</name>
+		<value>/user/hound/linkedin-template.xml</value>
+		<description>a path of template file on the hdfs
+		</description>
+	</property>
+
+	<property>
+		<name>ext.resource.pinyin</name>
+		<value>./pinyin_tab.txt</value>
+		<description>a path of pinyin tab in classpath
+		</description>
+	</property>
+
+	<property>
+		<name>ext.resource.school</name>
+		<value>./school_tab.txt</value>
+		<description>a path of school tab in classpath
+		</description>
+	</property>
+
+	<property>
+		<name>ext.resource.education</name>
+		<value>./education_tab.txt</value>
+		<description>a path of education tab in classpath
+		</description>
+	</property>
+
+	<property>
+		<name>ext.resource.subject</name>
+		<value>./subject_tab.txt</value>
+		<description>a path of education tab in classpath
+		</description>
+	</property>
+
+	<!-- nutch 更新时间差  增加到3000天和9000天-->
+	<property>
+		<name>db.fetch.interval.default</name>
+		<value>259200000</value>
+		<description>The default number of seconds between re-fetches of a
+			page (30 days).
+		</description>
+	</property>
+
+	<property>
+		<name>db.fetch.interval.max</name>
+		<value>777600000</value>
+		<description>The maximum number of seconds between re-fetches of a
+			page
+			(90 days). After this period every page in the db will be re-tried, no
+			matter what is its status.
+		</description>
+	</property>
+
+</configuration>
