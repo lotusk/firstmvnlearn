@@ -58,7 +58,7 @@ words += "test02"
 words
 
 
-val map = mutable.Map.empty[String, Int]
+
 val nums = Set(1, 2, 3)
 nums + 5
 
@@ -70,7 +70,10 @@ nums ++ List(6,7)
 nums -- List(1, 2)
 nums & Set(1, 3, 5, 7)
 
-
+val map = mutable.Map.empty[String, Int]
+map("hello") = 1
+map
+map("hello")
 
 
 
