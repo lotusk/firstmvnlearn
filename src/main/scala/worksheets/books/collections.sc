@@ -18,6 +18,7 @@ val buf = new ListBuffer[Int]
 
 
 
+
 buf += 1
 buf += 2
 buf
@@ -58,9 +59,9 @@ words += "test02"
 words
 
 
-
 val nums = Set(1, 2, 3)
 nums + 5
+
 
 
 nums -3
@@ -73,6 +74,7 @@ nums & Set(1, 3, 5, 7)
 val map = mutable.Map.empty[String, Int]
 map("hello") = 1
 map
+
 map("hello")
 
 
