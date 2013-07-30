@@ -12,21 +12,21 @@ val buf = new ListBuffer[Int]
 
 
 
+
+
+
+
+
+
 buf += 1
 buf += 2
 buf
 
 
-buf +=:3
-
-
 buf
 
-
 buf.toList
-
 import scala.collection.mutable.ArrayBuffer
-
 val buf2 = new ArrayBuffer[Int]()
 
 buf2 += 12
@@ -36,11 +36,46 @@ buf2
 buf2.length
 buf2(0)
 buf2.toArray
-
 def hasUpperCase(s: String) = s.exists(_.isUpper)
 hasUpperCase("Robert Frost")
 hasUpperCase("e e cummings")
-
 import scala.collection.mutable
-
 val mutaSet = mutable.Set(1, 2, 3)
+val text = "See Spot run. Run, Spot. Run!"
+val wordsArray = text.split("[ !,.]+")
+
+val words = mutable.Set.empty[String]
+for (word <- wordsArray)
+  words += word.toLowerCase
+
+words
+
+words + "mytest"
+
+words
+
+words += "test02"
+words
+
+
+val map = mutable.Map.empty[String, Int]
+val nums = Set(1, 2, 3)
+nums + 5
+
+
+nums -3
+nums ++ List(6,7)
+
+
+nums -- List(1, 2)
+nums & Set(1, 3, 5, 7)
+
+
+
+
+
+
+
+
+
+
