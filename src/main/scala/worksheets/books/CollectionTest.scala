@@ -9,7 +9,27 @@ package worksheets.books
  */
 object CollectionTest {
   def main(args: Array[String]) {
-    val s="ttttt"
-    augmentString(s).exists(x=>true)
+    val a=new TestA("hello")
+    val b=new TestA("h2")
+    val s=Set(a,b)
+    s.toList.foreach {
+      x =>
+        x.a=x.a+"change"
+    }
+
+    s.foreach(x=>println(x.a))
+
   }
 }
+
+
+object testa{
+
+  val b=a+"tttt"
+  val a="abc"
+
+  println(b +"  "+a)
+}
+
+
+class TestA(var a:String)
