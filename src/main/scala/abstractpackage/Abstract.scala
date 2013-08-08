@@ -14,3 +14,18 @@ trait Abstract {
     var current: T
 
 }
+
+class Concrete extends Abstract {
+  type T = String
+  def transform(x: String) = x + x
+  val initial = "hi"
+  var current = initial
+}
+
+
+object Main{
+  def main(args: Array[String]) {
+    val c=new Concrete
+    println(c.initial)
+  }
+}
