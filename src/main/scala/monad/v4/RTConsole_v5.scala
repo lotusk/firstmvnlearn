@@ -26,6 +26,7 @@ sealed abstract class IOAction_v4[+A] extends Function1[WorldState, (WorldState,
     def apply(state1:WorldState) = {
       val (state2, intermediateResult) =
         action1(state1);
+//      println("------------------")
       val action2 = f(intermediateResult)
       action2(state2)
     }
@@ -75,5 +76,6 @@ object HelloWorld_v4 extends IOApplication_v4 {
 object MyMain{
   def main(args: Array[String]) {
     HelloWorld_v4.main(args)
+    Seq()
   }
 }
